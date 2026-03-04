@@ -2,7 +2,9 @@ package com.adriangabas.b2b.controller;
 
 import com.adriangabas.b2b.model.Producto;
 import com.adriangabas.b2b.service.ProductoService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class ProductoController {
     }
 
     @PostMapping
-    public Producto crear(@RequestBody Producto producto) {
+    public Producto crear(@Valid @RequestBody Producto producto){
         return productoService.guardar(producto);
     }
 
@@ -33,7 +35,8 @@ public class ProductoController {
     }
 
     @PutMapping("/{id}")
-    public Producto actualizar(@PathVariable Long id, @RequestBody Producto producto) {
+    public Producto actualizar(@PathVariable Long id,
+                               @Valid @RequestBody Producto producto) {
         return productoService.actualizar(id, producto);
     }
 
