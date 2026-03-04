@@ -37,4 +37,9 @@ public class ProductoController {
         return productoService.actualizar(id, producto);
     }
 
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        productoService.eliminar(id);
+    }
+
 }
