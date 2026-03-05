@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.adriangabas</groupId>
-    <artifactId>b2b</artifactId>
+    <artifactId>springboot-backend-template</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>b2b</name>
-    <description>b2b</description>
+    <name>springboot-backend-template</name>
+    <description>Reusable REST API template built with Spring Boot 3, JPA, Pageable and OpenAPI</description>
     <url/>
     <licenses>
         <license/>
