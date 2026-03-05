@@ -5,6 +5,8 @@ import com.adriangabas.b2b.dto.ProductoResponse;
 import com.adriangabas.b2b.service.ProductoService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -20,10 +22,9 @@ public class ProductoController {
 
     // GET ALL
     @GetMapping
-    public List<ProductoResponse> obtenerTodos() {
-        return productoService.obtenerTodos();
+    public Page<ProductoResponse> obtenerTodos(Pageable pageable) {
+        return productoService.obtenerTodos(pageable);
     }
-
     // GET BY ID
     @GetMapping("/{id}")
     public ProductoResponse obtenerPorId(@PathVariable Long id) {
