@@ -1,15 +1,14 @@
 package com.adriangabas.b2b.controller;
 
-import com.adriangabas.b2b.model.Producto;
+import com.adriangabas.b2b.dto.ProductoRequest;
+import com.adriangabas.b2b.dto.ProductoResponse;
 import com.adriangabas.b2b.service.ProductoService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
 
 @RestController
-
 @RequestMapping("/productos")
 public class ProductoController {
 
@@ -19,30 +18,34 @@ public class ProductoController {
         this.productoService = productoService;
     }
 
+    // GET ALL
     @GetMapping
-    public List<Producto> obtenerTodos() {
+    public List<ProductoResponse> obtenerTodos() {
         return productoService.obtenerTodos();
     }
 
-    @PostMapping
-    public Producto crear(@Valid @RequestBody Producto producto){
-        return productoService.guardar(producto);
-    }
-
+    // GET BY ID
     @GetMapping("/{id}")
-    public Producto obtenerPorId(@PathVariable Long id) {
+    public ProductoResponse obtenerPorId(@PathVariable Long id) {
         return productoService.obtenerPorId(id);
     }
 
-    @PutMapping("/{id}")
-    public Producto actualizar(@PathVariable Long id,
-                               @Valid @RequestBody Producto producto) {
-        return productoService.actualizar(id, producto);
+    // CREATE
+    @PostMapping
+    public ProductoResponse crear(@Valid @RequestBody ProductoRequest request) {
+        return productoService.guardar(request);
     }
 
+    // UPDATE
+    @PutMapping("/{id}")
+    public ProductoResponse actualizar(@PathVariable Long id,
+                                       @Valid @RequestBody ProductoRequest request) {
+        return productoService.actualizar(id, request);
+    }
+
+    // DELETE
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable Long id) {
         productoService.eliminar(id);
     }
-
 }
