@@ -1,4 +1,4 @@
-package com.adriangabas.b2b.model;
+package com.adriangabas.template.model;
 
 import jakarta.persistence.*;
 import lombok.*;

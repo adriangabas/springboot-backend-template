@@ -1,4 +1,4 @@
-package com.adriangabas.b2b;
+package com.adriangabas.template;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,14 +1,12 @@
-package com.adriangabas.b2b.controller;
+package com.adriangabas.template.controller;
 
-import com.adriangabas.b2b.dto.ProductoRequest;
-import com.adriangabas.b2b.dto.ProductoResponse;
-import com.adriangabas.b2b.service.ProductoService;
+import com.adriangabas.template.dto.ProductoRequest;
+import com.adriangabas.template.dto.ProductoResponse;
+import com.adriangabas.template.service.ProductoService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/productos")

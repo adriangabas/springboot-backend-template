@@ -1,16 +1,13 @@
-package com.adriangabas.b2b.service;
-import com.adriangabas.b2b.dto.ProductoRequest;
-import com.adriangabas.b2b.dto.ProductoResponse;
-import com.adriangabas.b2b.model.Producto;
-import com.adriangabas.b2b.repository.ProductoRepository;
+package com.adriangabas.template.service;
+import com.adriangabas.template.dto.ProductoRequest;
+import com.adriangabas.template.dto.ProductoResponse;
+import com.adriangabas.template.model.Producto;
+import com.adriangabas.template.repository.ProductoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ProductoService {

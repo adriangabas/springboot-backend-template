@@ -1,4 +1,4 @@
-package com.adriangabas.b2b.dto;
+package com.adriangabas.template.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
