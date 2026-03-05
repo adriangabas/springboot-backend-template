@@ -6,6 +6,8 @@ import com.adriangabas.b2b.repository.ProductoRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,11 +22,9 @@ public class ProductoService {
     }
 
     // GET ALL
-    public List<ProductoResponse> obtenerTodos() {
-        return productoRepository.findAll()
-                .stream()
-                .map(this::convertToResponse)
-                .collect(Collectors.toList());
+    public Page<ProductoResponse> obtenerTodos(Pageable pageable) {
+        return productoRepository.findAll(pageable)
+                .map(this::convertToResponse);
     }
 
     // GET BY ID
